@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React from 'react'
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import OptionsListEOD from './components/OptionsListEOD'
+import OptionsListCboe from './components/OptionsListCboe'
+import OptionsListPolygon from './components/OptionsListPolygon'
+import Home from './components/Home'
+import Header from './components/Header'
+import Typography from '@mui/material/Typography';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header />
+        <BrowserRouter>
+            <Routes>
+              <Route exact path="/" element={<Home/>} />
+              <Route path="/options-eod" element={<OptionsListEOD />} />
+              <Route path="/options-cboe" element={<OptionsListCboe />} />
+              <Route path="/options-polygon" element={<OptionsListPolygon />} />
+            </Routes>
+      </BrowserRouter>
     </div>
   );
 }
