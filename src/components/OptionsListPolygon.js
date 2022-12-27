@@ -6,16 +6,32 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import { ScatterChart, Scatter, XAxis, YAxis, ZAxis, CartesianGrid, Tooltip, LabelList, Cell } from 'recharts';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import { Link } from 'react-router-dom';
 
 export default function OptionsList() {
   const [allOptions, setAllOptions] = useState([])
+  const [ticker, setTicker] = useState()
+  const [strikeprice, setStrikeprice] = useState()
+
+  const onChangeTicker = event => {
+    setTicker(event.target.value);
+ };
+
+  const onChangeStrikeprice = event => {
+    setStrikeprice(event.target.value);
+  };
 
   useEffect(() => {
     async function getOptions() {
-      //const results = await axios(`https://api.polygon.io/v3/reference/options/contracts?apiKey={process.env.REACT_APP_POLYGON_API_KEY}`);
-      // console.log(results.options, "HELLO", typeof(results.options))
+      
+      //const results = await axios(`https://api.polygon.io/v3/reference/options/contracts?underlying_ticker=${ticker}&strike_price=${strikeprice}&limit=1000&apiKey=${process.env.REACT_APP_POLYGON_API_KEY}`);
+      // this grabs all the ticker names, so have to map through this
+      // console.log(results[0].ticker, "RESULTS? working?")
       //setAllOptions(results.data)
+      // but then need to put it through this API request to get all the prices and greeks
+      //https://polygon.io/docs/options/get_v3_snapshot_options__underlyingasset___optioncontract 
+      // so do another axios? and map through the results.map(ticker => results.ticker?)
     }
     getOptions()
   },[])
@@ -35,18 +51,32 @@ export default function OptionsList() {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'row',
           alignItems: 'center',
           '& > *': {
-            m: 1,
+            m: 2,
           },
         }}
       >
-        <ButtonGroup variant="outlined" aria-label="outlined button group">
-          <Button>CALL</Button>
-          <Button>PUT</Button>
-        </ButtonGroup>
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',}}>
+          <Typography>Ticker</Typography>
+          <TextField id="ticker" label="ticker name" variant="outlined" onChange={onChangeTicker} 
+            value={ticker} /> 
+        </Box>
+        <Box sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',}}>
+          <Typography>Strike Price</Typography>
+          <TextField id="strikeprice" label="strike price" variant="outlined" onChange={onChangeStrikeprice} 
+            value={ticker} /> 
+        </Box>
+
       </Box>
+
 
       <ScatterChart
         width={800}
