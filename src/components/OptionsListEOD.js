@@ -44,7 +44,7 @@ export default function OptionsList() {
   //using local json file
   useEffect(() => {
     axios
-      .get("Tsla.json")
+      .get("TslaEOD.json")
       //.then((res) => console.log(res.data.data, "HELLO"))
       .then((res) => 
         setAllOptions(res.data.data)) 
