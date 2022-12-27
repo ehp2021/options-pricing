@@ -1,0 +1,316 @@
+{
+  "results": [
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2022-12-30",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA221230C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2022-12-30",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA221230P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2023-01-06",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230106C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2023-01-06",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230106P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2023-01-13",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230113C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2023-01-13",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230113P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2023-01-20",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230120C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2023-01-20",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230120P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2023-01-27",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230127C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2023-01-27",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230127P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2023-02-03",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230203C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2023-02-03",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230203P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2023-02-17",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230217C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2023-02-17",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230217P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2023-03-17",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230317C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2023-03-17",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230317P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2023-05-19",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230519C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2023-05-19",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230519P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2023-06-16",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230616C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2023-06-16",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230616P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2023-07-21",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230721C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2023-07-21",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA230721P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2023-12-15",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA231215C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2023-12-15",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA231215P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2024-09-20",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA240920C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2024-09-20",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA240920P00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OCASPS",
+  "contract_type": "call",
+  "exercise_style": "american",
+  "expiration_date": "2025-01-17",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA250117C00120000",
+  "underlying_ticker": "TSLA"
+  },
+  {
+  "cfi": "OPASPS",
+  "contract_type": "put",
+  "exercise_style": "american",
+  "expiration_date": "2025-01-17",
+  "primary_exchange": "BATO",
+  "shares_per_contract": 100,
+  "strike_price": 120,
+  "ticker": "O:TSLA250117P00120000",
+  "underlying_ticker": "TSLA"
+  }
+  ],
+  "status": "OK",
+  "request_id": "c9037af6135b4fe89bf31c09b504ecce",
+  "count": 28
+  }
+  

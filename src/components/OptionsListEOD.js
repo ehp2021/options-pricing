@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import OptionCard from "./OptionCard";
-import axios, { all } from 'axios';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
+import axios from 'axios';
 import { ScatterChart, Scatter, XAxis, YAxis, ZAxis, CartesianGrid, Tooltip, LabelList, Legend, Cell } from 'recharts';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';

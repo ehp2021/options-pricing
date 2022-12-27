@@ -12,6 +12,10 @@ export default function Home() {
         <Button variant="outlined" style={{margin: '10px'}}>EOD data</Button>
       </Link>
 
+      <Link to="/options-tradier">
+        <Button variant="outlined" style={{margin: '10px'}}>Tradier data</Button>
+      </Link>
+
       <Link to="/options-cboe">
         <Button variant="outlined" style={{margin: '10px'}}>CBOE API</Button>
       </Link>

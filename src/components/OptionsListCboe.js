@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import OptionCard from "./OptionCard";
-import axios, { all } from 'axios';
+import axios from 'axios';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { ScatterChart, Scatter, XAxis, YAxis, ZAxis, CartesianGrid, Tooltip, LabelList, Cell } from 'recharts';
-import Typography from '@mui/material/Typography';
+import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 

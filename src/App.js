@@ -1,6 +1,7 @@
 import React from 'react'
 import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import OptionsListEOD from './components/OptionsListEOD'
+import OptionsListTradier from './components/OptionsListTradier'
 import OptionsListCboe from './components/OptionsListCboe'
 import OptionsListPolygon from './components/OptionsListPolygon'
 import Home from './components/Home'
@@ -16,6 +17,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Home/>} />
               <Route path="/options-eod" element={<OptionsListEOD />} />
+              <Route path="/options-tradier" element={<OptionsListTradier />} />
               <Route path="/options-cboe" element={<OptionsListCboe />} />
               <Route path="/options-polygon" element={<OptionsListPolygon />} />
             </Routes>
