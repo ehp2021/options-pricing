@@ -10,6 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import axios from 'axios'
+import moment from 'moment'
 
 export default function OptionsListPolygon() {
   const [RSIs, setRSIs] = useState()
@@ -112,20 +113,20 @@ export default function OptionsListPolygon() {
 
         <Button variant="contained" onClick={getRSI}>Get RSI</Button>
       
-        <LineChart width={500} height={500} data={RSIs}
+        <LineChart width={800} height={500} data={RSIs}
             margin={{top: 20, right: 5, bottom: 5, left: 20,}}>
             <CartesianGrid stroke="#ccc" />
             <Line type="monotone" dataKey="value" stroke="#8884d8" />
             <XAxis 
               label={{ value: 'Timestamp', position: 'bottom', margin: '10px' }}
               domain={['dataMin', 'dataMax']} 
-              tickFormatter={(unixTime) => Date(unixTime)}
+              tickFormatter={(unixTime) => moment(unixTime).format('YYYY-MM-DD HH:mm:ss:SSS') }
               type="number" dataKey="timestamp" name="time stamp" unit="" />
             <YAxis 
               label={{ value: 'RSI values', angle: -90, position: 'insideLeft' }} 
               type="number" dataKey="value" name="RSI value" unit="" />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Legend />
+            {/* <Legend /> */}
           </LineChart>
 
       </Box>
