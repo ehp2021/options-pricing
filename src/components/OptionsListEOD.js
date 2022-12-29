@@ -134,7 +134,7 @@ export default function OptionsList() {
             margin={{top: 20, right: 20, bottom: 20, left: 20,}}>
             <CartesianGrid />
             <XAxis 
-              label={{ value: 'Purchase Price ($)', position: 'center', margin: '10px' }}
+              label={{ value: 'Purchase Price ($)', position: 'bottom', margin: '10px' }}
               type="number" dataKey="lastPrice" name="purchase price" unit="$" />
             <YAxis 
               label={{ value: 'Implied Volatility (%)', angle: -90, position: 'insideLeft' }} yaxisId="left" orientation="left"

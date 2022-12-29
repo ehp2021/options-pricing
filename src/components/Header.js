@@ -24,11 +24,12 @@ export default function Header() {
             <Button variant="contained" 
               href="/"
               sx={{margin: '2px', color: "white"}}>Home</Button>
-          </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Options Pricing Comp Tool
-            </Typography>
+               </IconButton>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              Options Pricing Comp Tool
+              </Typography>
           {/* <Button color="inherit">Login</Button> */}
+        
         </Toolbar>
       </AppBar>
     </Box>
