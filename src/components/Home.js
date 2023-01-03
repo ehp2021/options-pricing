@@ -7,6 +7,10 @@ export default function Home() {
   return (
     <div>
 
+  <Link to="/risk">
+        <Button variant="outlined" style={{margin: '10px'}}>Risk Reward</Button>
+      </Link>
+
       <Link to="/options-eod">
         <Button variant="outlined" style={{margin: '10px'}}>EOD data</Button>
       </Link>

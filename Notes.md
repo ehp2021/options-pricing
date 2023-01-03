@@ -1,6 +1,7 @@
 
 TRADIER
 https://documentation.tradier.com/brokerage-api/markets/get-quotes
+https://dash.tradier.com/dashboard
 
 https://eodhistoricaldata.com/api/options/TSLA.US?api_token=demo&from=2018-01-01&to=2022-12-06
 
