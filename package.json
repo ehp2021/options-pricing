@@ -8,6 +8,7 @@
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.0",
     "axios": "^1.2.0",
+    "gaussian": "^1.2.0",
     "install": "^0.13.0",
     "moment": "^2.29.4",
     "npm": "^9.1.3",

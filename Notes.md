@@ -5,6 +5,12 @@ https://dash.tradier.com/dashboard
 
 https://eodhistoricaldata.com/api/options/TSLA.US?api_token=demo&from=2018-01-01&to=2022-12-06
 
+
+gaussian
+https://www.npmjs.com/package/gaussian
+black scholes
+https://github.com/paper-19/options/blob/main/app/blackscholes.js
+
 TSLA.json set up.
 data: [
   {
