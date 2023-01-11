@@ -31,6 +31,7 @@ export default function Risk() {
   const [stockPrice, setStockPrice] = useState()
   const [highPriceInput, setHighPriceInput] = useState()
   const [lowPriceInput, setLowPriceInput] = useState()
+  const [optionPrice, setOptionPrice] = useState()
   //risk free rate
   const [risk, setRisk] = useState()
   const [volatility, setVolatility] = useState()
@@ -59,42 +60,27 @@ export default function Risk() {
     setLowPriceInput(event.target.value);
   };
 
-  //grab current stock price
-  const fetchStockPrice = async () => {
-    try {
-      const accessToken = process.env.REACT_APP_TRADIER_ACCESS_TOKEN;
-      const stock = stockTicker;
-      const url=`https://api.tradier.com/v1/markets/quotes?symbols=${stock}`
-      const response = await axios(url, 
-        {
-        headers: {
-          Accept: 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
-      //last price
-      // console.log(response.data.quotes.quote.last, "fetch stock price working?")
-      setStockPrice(response.data.quotes.quote.last);
-      blackscholesHigh(stockPrice, highPriceInput, time, 0, risk, volatility)
-      //blackscholesLow(stockPrice, lowPriceInput, time, 0, risk, volatility)
-    } catch (error) {
-      console.error(error);
-    }
+  const onChangeOptionPriceHandler = event => {
+    setOptionPrice(event.target.value)
   }
 
   //black scholes calculation
   const distribution = gaussian(0, 1);
-  
   // current, strike, time, dividend, rate, volatility
   let dividend = 0;
   const blackscholesHigh = (current, strike, time, dividend, rate, volatility) => {
+
+    // console.log(Math.log(current / strike), "math log working?", Math.log(5))
     let d1 =
       (Math.log(current / strike) +
-        (rate - dividend + Math.pow(volatility, 2) / 2) * time) /
-      (volatility * Math.sqrt(time));
-    let d2 = d1 - volatility * Math.sqrt(time);
+      (rate - dividend + Math.pow(volatility, 2) / 2) * time) / (volatility * Math.sqrt(time));
+    console.log(volatility * Math.sqrt(time), "line 77")
+      let d2 = d1 - volatility * Math.sqrt(time);
   
+    console.log(d1, "D1", d2, "D2")
+
     var nd_1 = distribution.cdf(d1);
+    console.log(nd_1, 'ND-1')
     var nd_2 = distribution.cdf(d2);
     let call =
       current * Math.pow(Math.E, -dividend * time) * nd_1 -
@@ -112,6 +98,30 @@ export default function Risk() {
       put: put
     };
   };
+
+  //grab current stock price
+  const fetchStockPrice = async () => {
+    try {
+      const accessToken = process.env.REACT_APP_TRADIER_ACCESS_TOKEN;
+      const stock = stockTicker;
+      const url=`https://api.tradier.com/v1/markets/quotes?symbols=${stock}`
+      const response = await axios(url, 
+        {
+        headers: {
+          Accept: 'application/json',
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      //last price
+      console.log(response.data.quotes.quote.last, "fetch stock price working?")
+      setStockPrice(response.data.quotes.quote.last);
+      console.log(stockPrice, "stock price line 83")
+      blackscholesHigh(stockPrice, highPriceInput, time, 0, risk, volatility)
+      //blackscholesLow(stockPrice, lowPriceInput, time, 0, risk, volatility)
+    } catch (error) {
+      console.error(error);
+    }
+  }
   
 
   return (
@@ -146,8 +156,9 @@ export default function Risk() {
             </Item>
           </Grid>
           <Grid item xs={4}>
-            <Item>option price high
-              {"n/a"}
+            <Item>
+              <Typography>Option price high</Typography>
+              {blackscholesHigh(stockPrice, highPriceInput, time, 0, risk, volatility).call ? blackscholesHigh(stockPrice, highPriceInput, time, 0, risk, volatility).call : "N/A"}
             </Item>
           </Grid>
           <Grid item xs={4}>
@@ -166,10 +177,18 @@ export default function Risk() {
             </Item>
           </Grid>
           <Grid item xs={4}>
-            <Item>current option price</Item>
+            <Item>
+            <Typography>Current Option Price</Typography>
+                <TextField id="option-price-input" label="Current price" variant="outlined" 
+                  onChange={onChangeOptionPriceHandler} 
+                  value={optionPrice} /> 
+            </Item>
           </Grid>
           <Grid item xs={4}>
-            <Item>risk reward ratio for current price</Item>
+            <Item>
+              <Typography>Risk reward ratio for current price</Typography>
+                {optionPrice / optionPrice}
+            </Item>
           </Grid>
 
           {/* ROW 3 */}
