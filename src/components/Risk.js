@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import gaussian from 'gaussian';
 import Button from '@mui/material/Button';
+import bs from 'black-scholes';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -64,43 +65,10 @@ export default function Risk() {
     setOptionPrice(event.target.value)
   }
 
-  //black scholes calculation
-  const distribution = gaussian(0, 1);
-  // current, strike, time, dividend, rate, volatility
-  let dividend = 0;
-  const blackscholesHigh = (current, strike, time, dividend, rate, volatility) => {
 
-    // console.log(Math.log(current / strike), "math log working?", Math.log(5))
-    let d1 =
-      (Math.log(current / strike) +
-      (rate - dividend + Math.pow(volatility, 2) / 2) * time) / (volatility * Math.sqrt(time));
-    console.log(volatility * Math.sqrt(time), "line 77")
-      let d2 = d1 - volatility * Math.sqrt(time);
-  
-    console.log(d1, "D1", d2, "D2")
 
-    var nd_1 = distribution.cdf(d1);
-    console.log(nd_1, 'ND-1')
-    var nd_2 = distribution.cdf(d2);
-    let call =
-      current * Math.pow(Math.E, -dividend * time) * nd_1 -
-      strike * Math.pow(Math.E, -rate * time) * nd_2;
-  
-    var nd_1 = distribution.cdf(-d1);
-    var nd_2 = distribution.cdf(-d2);
-    let put =
-      strike * Math.pow(Math.E, -rate * time) * nd_2 -
-      current * Math.pow(Math.E, -dividend * time) * nd_1;
-    
-    console.log("CALL", call, "PUT",put)
-    return {
-      call: call,
-      put: put
-    };
-  };
-
-  //grab current stock price
-  const fetchStockPrice = async () => {
+  //grab CALL price
+  const fetchCallPrice = async () => {
     try {
       const accessToken = process.env.REACT_APP_TRADIER_ACCESS_TOKEN;
       const stock = stockTicker;
@@ -115,9 +83,28 @@ export default function Risk() {
       //last price
       console.log(response.data.quotes.quote.last, "fetch stock price working?")
       setStockPrice(response.data.quotes.quote.last);
-      console.log(stockPrice, "stock price line 83")
-      blackscholesHigh(stockPrice, highPriceInput, time, 0, risk, volatility)
-      //blackscholesLow(stockPrice, lowPriceInput, time, 0, risk, volatility)
+      bs.blackScholes(stockPrice, highPriceInput, time / 365, volatility, risk, "call");
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  const fetchPutPrice = async () => {
+    try {
+      const accessToken = process.env.REACT_APP_TRADIER_ACCESS_TOKEN;
+      const stock = stockTicker;
+      const url=`https://api.tradier.com/v1/markets/quotes?symbols=${stock}`
+      const response = await axios(url, 
+        {
+        headers: {
+          Accept: 'application/json',
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+      //last price
+      console.log(response.data.quotes.quote.last, "fetch stock price working?")
+      setStockPrice(response.data.quotes.quote.last);
+      bs.blackScholes(stockPrice, highPriceInput, time / 365, volatility, risk, "put");
     } catch (error) {
       console.error(error);
     }
@@ -233,8 +220,11 @@ export default function Risk() {
             </Grid>
           
             <Button sx={{margin: '10px'}}variant="contained"
-              onClick={fetchStockPrice}
-              >Calculate</Button>
+              onClick={fetchCallPrice}
+              >Call</Button>
+            <Button sx={{margin: '10px'}}variant="contained"
+              onClick={fetchPutPrice}
+              >Put</Button>
           </Grid>
 
         </Grid>

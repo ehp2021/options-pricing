@@ -6,11 +6,53 @@ https://dash.tradier.com/dashboard
 https://eodhistoricaldata.com/api/options/TSLA.US?api_token=demo&from=2018-01-01&to=2022-12-06
 
 
+OPTION1
+https://www.npmjs.com/package/black-scholes
+OPTION2
 gaussian
 https://www.npmjs.com/package/gaussian
 black scholes
 https://github.com/paper-19/options/blob/main/app/blackscholes.js
 
+
+  //black scholes calculation
+  const distribution = gaussian(0, 1);
+  // current, strike, time, dividend, rate, volatility
+  let dividend = 0;
+  const blackscholesHigh = (current, strike, time, dividend, rate, volatility) => {
+
+    // console.log(Math.log(current / strike), "math log working?", Math.log(5))
+    let d1 =
+      (Math.log(current / strike) +
+      (rate - dividend + Math.pow(volatility, 2) / 2) * time) / (volatility * Math.sqrt(time));
+    console.log(volatility * Math.sqrt(time), "line 77")
+      let d2 = d1 - volatility * Math.sqrt(time);
+  
+    console.log(d1, "D1", d2, "D2")
+
+    var nd_1 = distribution.cdf(d1);
+    console.log(nd_1, 'ND-1')
+    var nd_2 = distribution.cdf(d2);
+    let call =
+      current * Math.pow(Math.E, -dividend * time) * nd_1 -
+      strike * Math.pow(Math.E, -rate * time) * nd_2;
+  
+    var nd_1 = distribution.cdf(-d1);
+    var nd_2 = distribution.cdf(-d2);
+    let put =
+      strike * Math.pow(Math.E, -rate * time) * nd_2 -
+      current * Math.pow(Math.E, -dividend * time) * nd_1;
+    
+    console.log("CALL", call, "PUT",put)
+    return {
+      call: call,
+      put: put
+    };
+  };
+
+
+
+TSLA JSON SET UP
 TSLA.json set up.
 data: [
   {
